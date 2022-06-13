@@ -7,6 +7,7 @@ import {RegisterGameComponent} from "./core/register-game/register-game.componen
 import {ViewClientComponent} from "./core/view-client/view-client.component";
 import {ViewGamesComponent} from "./core/view-games/view-games.component";
 import {PriceConsolaComponent} from "./core/price-consola/price-consola.component";
+import {AlquilerComponent} from "./core/alquiler/alquiler.component";
 
 const routes: Routes = [
 
@@ -37,6 +38,10 @@ const routes: Routes = [
   {
     path: 'price-consola',
     component: PriceConsolaComponent
+  },
+  {
+    path: 'alquiler',
+    component: AlquilerComponent
   }
 ];
 

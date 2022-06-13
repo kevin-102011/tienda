@@ -14,6 +14,7 @@ import { EditGameComponent } from './core/edits/edit-game/edit-game.component';
 import { ViewGamesComponent } from './core/view-games/view-games.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PriceConsolaComponent } from './core/price-consola/price-consola.component';
+import { AlquilerComponent } from './core/alquiler/alquiler.component';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { PriceConsolaComponent } from './core/price-consola/price-consola.compon
     EditClientComponent,
     EditGameComponent,
     ViewGamesComponent,
-    PriceConsolaComponent
+    PriceConsolaComponent,
+    AlquilerComponent
   ],
     imports: [
         BrowserModule,

@@ -1,0 +1,48 @@
+<div class="container-view-client">
+  <div class="title-principal">
+    <h2>Alquiler</h2>
+  </div>
+  <div class="container-form mt-4">
+    <form [formGroup]="alquilerForm" (ngSubmit)="generateFacture()">
+      <div class="input-group mb-2">
+        <div class="input-fill w-100">
+          <div class="mb-3">
+            <span class="mr-sm">Clientes</span>
+          </div>
+          <select class="form-select w-100" formControlName="personId">
+            <option *ngFor="let item of clients" value="{{item.personId}}">{{item.personName}} {{item.personLastName}}</option>
+          </select>
+          <div class="mt-3">
+          <button type="submit" class="btn btn-success">Generar Factuta</button>
+          </div>
+        </div>
+
+      </div>
+    </form>
+  </div>
+  <div class="container-table">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Nombre del Juego</th>
+        <th scope="col">Genero</th>
+        <th scope="col">Año</th>
+        <th class="col-button">Acciones</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let item of games;">
+        <th>1</th>
+        <td>{{item.videoGameName}}</td>
+        <td>{{item.videoGameGender}}</td>
+        <td>{{item.videoGameYear}}</td>
+        <td style="text-align: center"><button type="button" class="btn btn-success" (click)="buttonAlquilerGame(item)">Alquilar</button></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="text-center">
+    <button type="button" class="btn btn-warning" [routerLink]="'/dashboard'">Volver</button>
+  </div>
+</div>
