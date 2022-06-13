@@ -1,0 +1,30 @@
+.content{
+  background: url("https://www.wallpapertip.com/wmimgs/66-669464_warcraft-3-orc-vs-human.jpg") no-repeat center center fixed;
+  background-size: cover;
+  width: auto;
+  height: auto;
+}
+.content-button{
+  text-align: center;
+ padding: 50vh;
+}
+.button{
+  width: 250px;
+  padding: 20px;
+  border-radius: 5px;
+  background: #9e2a2a;
+  color: azure;
+  font-size: 30px;
+  border: none;
+}
+button:hover{
+  width: 250px;
+  padding: 20px;
+  border-radius: 5px;
+  background: #e18585;
+  color: azure;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+

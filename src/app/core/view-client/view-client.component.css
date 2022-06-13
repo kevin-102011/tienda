@@ -1,0 +1,29 @@
+.container-view-client{
+  width: 100%;
+  height: 100%;
+  background:  #262222;
+  display: flow-root;
+  overflow: auto;
+}
+.container-table{
+  background: #dedede;
+  margin: 80px;
+  border-radius: 5px;
+}
+.title-principal{
+  background: #dc8044;
+  color: white;
+  text-align: center;
+  padding: 10px;
+  margin: 0px 200px 0 200px;
+  border-radius: 0px 0px 10px 10px;
+}
+.col-button{
+  text-align: center;
+}
+.btn-warning{
+background: #dc8044;
+  text-align: center;
+  color: white;
+  width: 200px;
+}

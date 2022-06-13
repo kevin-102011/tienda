@@ -1,0 +1,63 @@
+<div class="container-edit">
+  <div class="card w-50 m-3">
+    <div class="card-body">
+      <div class="title text-center">
+        <p>Precio de juegos por consola</p>
+      </div>
+
+      <div class="container-form w-100 mt-4">
+        <form [formGroup]="consolePriceForm" (ngSubmit)="consolePriceSave()">
+          <div class="input-group mb-2">
+            <div class="input-fill w-100">
+              <div class="mb-3">
+                <span class="mr-sm">Tipo de consola</span>
+              </div>
+              <select class="form-select w-100" formControlName="consoleTypeId">
+                <option value="cff6ffc9-2187-4738-9d5c-559c8b670e58">Xbox</option>
+                <option value="2d0ad8a1-9121-481b-a2aa-e079a3ade709">PlayStation</option>
+                <option value="20263d97-7087-4f42-bfbf-d5ca30125c0b">Nintendo</option>
+              </select>
+              <div *ngIf="consolePriceForm.get('consoleTypeId')?.dirty || consolePriceForm.get('consoleTypeId')?.touched">
+                <p *ngIf="consolePriceForm.get('consoleTypeId')?.hasError('required')" style="color: red">
+                  Este campo es requerido
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <div class="input-fill w-100">
+              <span class="mr-sm">Precio (USD)</span>
+              <input type="number" class="form-control w-100 mb-2" formControlName="pricePerConsoleCash">
+              <div *ngIf="consolePriceForm.get('pricePerConsoleCash')?.dirty || consolePriceForm.get('pricePerConsoleCash')?.touched">
+                <p *ngIf="consolePriceForm.get('pricePerConsoleCash')?.hasError('required')" style="color: red">
+                  Este campo es requerido
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="input-fill w-100 mb-3">
+              <span class="mr-sm ">Fecha</span>
+              <input type="date" class="form-control w-100 mt-3" formControlName="pricePerConsoleDate">
+              <div *ngIf="consolePriceForm.get('pricePerConsoleDate')?.dirty || consolePriceForm.get('pricePerConsoleDate')?.touched">
+                <p *ngIf="consolePriceForm.get('pricePerConsoleDate')?.hasError('required')" style="color: red">
+                  Este campo es requerido
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="btns-edit">
+            <button class="btn btn-success w-100" type="submit">Registrar</button>
+            <button class="btn btn-primary w-100 mt-3" [routerLink]="'/dashboard/'">Volver</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

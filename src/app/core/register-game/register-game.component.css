@@ -1,0 +1,63 @@
+.title {
+  padding-top: 10px;
+  font-weight: 600;
+  font-size: 25px;
+  margin-bottom: 20px;
+  text-align: center;
+  background: #dc8044;
+  color: white;
+  width: 100%;
+  height: 70px;
+}
+.card-body {
+  padding: 0px;
+  overflow: auto;
+  background: #dedede;
+}
+.card{
+  border: solid 3px  #dc8044;
+}
+
+
+.space{
+  padding: 1px 8px 1px 6px;
+}
+
+button:focus {
+  box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  -webkit-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+  -moz-box-shadow: 0px 0px 0px rgba(0, 0, 0, 0);
+}
+
+.mr-sm{
+  margin-right: 20px;
+}
+
+.btn-primary{
+  background: #dc8044;
+  border: 1px solid #dc8044;
+}
+.input-group input{
+  margin-top: 10px;
+  width: 300px;
+}
+
+.container-edit{
+  margin:auto;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background: #262222;
+}
+.btns-edit{
+  margin-top:40px;
+}
+.title-employee p{
+  font-size: 22px;
+}
+.container-form{
+  padding: 20px;
+}
+
+

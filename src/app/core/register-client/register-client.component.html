@@ -1,0 +1,86 @@
+<div class="container-edit">
+  <div class="card w-50 m-3">
+    <div class="card-body">
+      <div class="title text-center">
+        <p>Registrar Cliente</p>
+      </div>
+
+      <div class="container-form w-100 mt-4">
+        <form [formGroup]="clientForm" (ngSubmit)="clientSave()">
+          <div class="input-group mb-2">
+            <div class="input-fill w-100">
+              <div class="mb-3">
+                <span class="mr-sm">Identificacion</span>
+              </div>
+              <select class="form-select w-100" formControlName="Identificacion">
+                <option value="1">Cedula</option>
+                <option value="2">Targeta de Identidad</option>
+              </select>
+              <div *ngIf="clientForm.get('Identificacion')?.dirty || clientForm.get('Identificacion')?.touched">
+                <p *ngIf="clientForm.get('Identificacion')?.hasError('required')" style="color: red">
+                  Este campo es requerido
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <div class="input-fill w-100">
+              <span class="mr-sm">Nombre completo</span>
+              <input type="text" class="form-control w-100 mb-2" formControlName="nombre">
+              <div *ngIf="clientForm.get('nombre')?.dirty || clientForm.get('nombre')?.touched">
+                <p *ngIf="clientForm.get('nombre')?.hasError('required')" style="color: red">
+                  Este campo es requerido
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="input-fill w-100 mb-3">
+              <span class="mr-sm ">Email</span>
+              <input type="email" class="form-control w-100 mt-3" formControlName="email">
+              <div *ngIf="clientForm.get('email')?.dirty || clientForm.get('email')?.touched">
+                <p *ngIf="clientForm.get('email')?.hasError('required')" style="color: red">
+                  Este campo es requerido
+                </p>
+                <p *ngIf="clientForm.get('email')?.hasError('email')" style="color: red">
+                  Este campo no pertenece a un Email
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="input-fill w-100">
+              <span class="mr-sm">Telefono</span>
+              <input type="number" class="form-control w-100 mb-2" formControlName="telefono">
+              <div *ngIf="clientForm.get('telefono')?.dirty || clientForm.get('telefono')?.touched">
+                <p *ngIf="clientForm.get('telefono')?.hasError('required')" style="color: red">
+                  Este campo es requerido
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="input-group">
+            <span class="mr-sm">Direccion</span>
+            <div class="input-fill w-100 mt-3">
+              <textarea class="form-control w-100" formControlName="direccion">
+              </textarea>
+              <div *ngIf="clientForm.get('direccion')?.dirty || clientForm.get('direccion')?.touched">
+                <p *ngIf="clientForm.get('direccion')?.hasError('required')" style="color: red">
+                  Este campo es requerido
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="btns-edit">
+            <button class="btn btn-success w-100" type="submit">Registrar</button>
+            <button class="btn btn-primary w-100 mt-3" [routerLink]="'/dashboard/'">Volver</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
