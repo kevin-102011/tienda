@@ -8,6 +8,10 @@ import {ViewClientComponent} from "./core/view-client/view-client.component";
 import {ViewGamesComponent} from "./core/view-games/view-games.component";
 import {PriceConsolaComponent} from "./core/price-consola/price-consola.component";
 import {AlquilerComponent} from "./core/alquiler/alquiler.component";
+import {AddAlquilerComponent} from "./core/add-alquiler/add-alquiler.component";
+import {ImpFactureComponent} from "./core/imp-facture/imp-facture.component";
+import {EditClientComponent} from "./core/edits/edit-client/edit-client.component";
+import {EditGameComponent} from "./core/edits/edit-game/edit-game.component";
 
 const routes: Routes = [
 
@@ -42,6 +46,22 @@ const routes: Routes = [
   {
     path: 'alquiler',
     component: AlquilerComponent
+  },
+  {
+    path: 'add-alquiler/:invoiceId/:videoGameId',
+    component: AddAlquilerComponent
+  },
+  {
+    path: 'imp-facture/:invoiceId',
+    component: ImpFactureComponent
+  },
+  {
+    path: 'edit-client/:personId',
+    component: EditClientComponent
+  },
+  {
+    path: 'edit-game/:videoGameId',
+    component: EditGameComponent
   }
 ];
 

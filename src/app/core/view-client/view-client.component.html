@@ -6,20 +6,20 @@
     <table class="table table-striped">
       <thead>
       <tr>
-        <th scope="col">#</th>
-        <th scope="col">Nombre</th>
+        <th scope="col">Nombre completo</th>
+        <th scope="col">Numero de Documento</th>
         <th scope="col">Email</th>
         <th scope="col">Telefono</th>
         <th class="col-button">Acciones</th>
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <th>1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>Otto</td>
-        <td style="text-align: center"><button type="button" class="btn btn-success">Edit</button></td>
+      <tr *ngFor="let item of clients">
+        <td>{{item.personName}} {{item.personLastName}}</td>
+        <td>{{item.personDocument}}</td>
+        <td>{{item.personEmail}}</td>
+        <td>{{item.personPhone}}</td>
+        <td style="text-align: center"><button type="button" class="btn btn-success" [routerLink]="'/edit-client/'+item.personId">Edit</button></td>
       </tr>
       </tbody>
     </table>

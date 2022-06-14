@@ -19,4 +19,7 @@ export class ClientServiceService {
   public updateClient(clientId:string | null,clientData:any):Observable<any>{
     return this.httpClient.put(this.API_SERVER+'/update/'+clientId,clientData)
   }
+  public getClientById(personId:string | null):Observable<any>{
+    return this.httpClient.get(this.API_SERVER+'/'+personId)
+  }
 }

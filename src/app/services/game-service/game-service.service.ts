@@ -19,4 +19,11 @@ export class GameService {
   updateGame(gameId:string  | null,gameData:any):Observable<any>{
     return this.httpClient.put(this.API_SERVER+'/update/'+gameId,gameData);
   }
+  getAllListAddRent(videoGameId:string  | null,rentalDateStart:string  | null):Observable<any>{
+  return this.httpClient.get(this.API_SERVER+'/videogamewithoutrent/'+videoGameId+'/'+rentalDateStart);
+  }
+  getGameById(gameId:string  | null):Observable<any>{
+    return this.httpClient.get(this.API_SERVER+'/'+gameId);
+  }
 }
+

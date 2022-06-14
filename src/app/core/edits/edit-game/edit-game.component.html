@@ -1,1 +1,59 @@
-<p>edit-game works!</p>
+<div class="container-edit">
+  <div class="card w-50 m-3">
+    <div class="card-body">
+      <div class="title text-center">
+        <p>Editar Información de los Juegos</p>
+      </div>
+
+      <div class="container-form w-100 mt-4">
+        <form [formGroup]="gameForm" (ngSubmit)="gameSave()">
+          <div class="input-group mb-2">
+          </div>
+          <div class="input-group">
+            <div class="input-fill w-100">
+              <span class="mr-sm">Nombre</span>
+              <input type="text" class="form-control w-100 mb-2" formControlName="videoGameName">
+              <div *ngIf="gameForm.get('videoGameName')?.dirty || gameForm.get('videoGameName')?.touched">
+                <p *ngIf="gameForm.get('videoGameName')?.hasError('required')" style="color: red">
+                  Este campo es requerido
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="input-fill w-100 mb-3">
+              <span class="mr-sm ">Año</span>
+              <input type="date" class="form-control w-100 mt-3" formControlName="videoGameYear">
+              <div *ngIf="gameForm.get('videoGameYear')?.dirty || gameForm.get('date')?.touched">
+                <p *ngIf="gameForm.get('videoGameYear')?.hasError('required')" style="color: red">
+                  Este campo es requerido
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="input-group">
+            <span class="mr-sm">Genero</span>
+            <div class="input-fill w-100 mt-2">
+              <input class="form-control w-100" type="text" formControlName="videoGameGender">
+
+              <div *ngIf="gameForm.get('videoGameGender')?.dirty || gameForm.get('videoGameGender')?.touched">
+                <p *ngIf="gameForm.get('videoGameGender')?.hasError('required')" style="color: red">
+                  Este campo es requerido
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="btns-edit">
+            <button class="btn btn-success w-100" type="submit">Editar</button>
+            <button class="btn btn-primary w-100 mt-3" [routerLink]="'/dashboard/'">Volver</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+
+

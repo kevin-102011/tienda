@@ -6,24 +6,18 @@
     <table class="table table-striped">
       <thead>
       <tr>
-        <th scope="col">#</th>
         <th scope="col">Nombre</th>
         <th scope="col">Año</th>
         <th scope="col">Genero</th>
-        <th scope="col">Descuento</th>
-        <th scope="col">Valor Descuento</th>
         <th class="col-button">Acciones</th>
       </tr>
       </thead>
       <tbody>
-      <tr>
-        <th>1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-        <td>Otto</td>
-        <td>Otto</td>
-        <td>Otto</td>
-        <td style="text-align: center"><button type="button" class="btn btn-success">Editar</button></td>
+      <tr *ngFor="let item of games">
+        <th>{{item.videoGameName}}</th>
+        <td>{{item.videoGameYear}}</td>
+        <td>{{item.videoGameGender}}</td>
+        <td style="text-align: center"><button type="button" class="btn btn-success" [routerLink]="'/edit-game/'+item.videoGameId">Editar</button></td>
       </tr>
       </tbody>
     </table>

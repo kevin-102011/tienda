@@ -15,6 +15,8 @@ import { ViewGamesComponent } from './core/view-games/view-games.component';
 import { HttpClientModule } from '@angular/common/http';
 import { PriceConsolaComponent } from './core/price-consola/price-consola.component';
 import { AlquilerComponent } from './core/alquiler/alquiler.component';
+import { AddAlquilerComponent } from './core/add-alquiler/add-alquiler.component';
+import { ImpFactureComponent } from './core/imp-facture/imp-facture.component';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,9 @@ import { AlquilerComponent } from './core/alquiler/alquiler.component';
     EditGameComponent,
     ViewGamesComponent,
     PriceConsolaComponent,
-    AlquilerComponent
+    AlquilerComponent,
+    AddAlquilerComponent,
+    ImpFactureComponent
   ],
     imports: [
         BrowserModule,

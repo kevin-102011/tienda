@@ -18,8 +18,7 @@ export class PriceConsolaComponent implements OnInit {
   ngOnInit(): void {
     this.consolePriceForm = this.formBuilder.group({
       consoleTypeId: new FormControl(null, [Validators.required,]),
-      pricePerConsoleCash: new FormControl(null, [Validators.required,]),
-      pricePerConsoleDate: new FormControl(null, [Validators.required,]),
+      pricePerConsoleCash: new FormControl(null, [Validators.required,])
 
     })
   }
@@ -28,8 +27,7 @@ export class PriceConsolaComponent implements OnInit {
     if(this.consolePriceForm.valid){
       const data={
         consoleTypeId: this.consolePriceForm.get('consoleTypeId')?.value,
-        pricePerConsoleCash: this.consolePriceForm.get('pricePerConsoleCash')?.value,
-        pricePerConsoleDate: this.consolePriceForm.get('pricePerConsoleDate')?.value
+        pricePerConsoleCash: this.consolePriceForm.get('pricePerConsoleCash')?.value
       }
       this.priceConsolaService.savePriceConsola(data).subscribe(()=>{
         Swal.fire({

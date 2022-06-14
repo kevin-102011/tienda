@@ -1,1 +1,111 @@
-<p>edit-client works!</p>
+<div class="container-edit">
+  <div class="card w-50 m-3">
+    <div class="card-body">
+      <div class="title text-center">
+        <p>Editar Cliente</p>
+      </div>
+
+      <div class="container-form w-100 mt-4">
+        <form [formGroup]="clientForm" (ngSubmit)="clientSave()">
+          <div class="input-group mb-2">
+            <div class="input-fill w-100">
+              <div class="mb-3">
+                <span class="mr-sm">Tipo Identificacion</span>
+              </div>
+              <select class="form-select w-100" formControlName="personDocumentTypeId">
+                <option value="bbb70ec2-dfb5-4328-b381-bf92f10033d5">Cédula</option>
+                <option value="2be2ef47-9f0b-45dc-a893-0e5ba09440a2">Tarjeta de indentidad</option>
+              </select>
+              <div *ngIf="clientForm.get('personDocumentTypeId')?.dirty || clientForm.get('personDocumentTypeId')?.touched">
+                <p *ngIf="clientForm.get('personDocumentTypeId')?.hasError('required')" style="color: red">
+                  Este campo es requerido
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="input-group mb-2">
+            <div class="input-fill w-100">
+              <div class="mb-3">
+                <span class="mr-sm">Identificacion</span>
+              </div>
+              <input type="number" class="form-control w-100" formControlName="personDocument">
+              <div *ngIf="clientForm.get('personDocumentTypeId')?.dirty || clientForm.get('personDocumentTypeId')?.touched">
+                <p *ngIf="clientForm.get('personDocumentTypeId')?.hasError('required')" style="color: red">
+                  Este campo es requerido
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <div class="input-fill w-100">
+              <span class="mr-sm">Nombre</span>
+              <input type="text" class="form-control w-100 mb-2" formControlName="personName">
+              <div *ngIf="clientForm.get('personName')?.dirty || clientForm.get('personName')?.touched">
+                <p *ngIf="clientForm.get('personName')?.hasError('required')" style="color: red">
+                  Este campo es requerido
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="input-fill w-100">
+              <span class="mr-sm">Apellido</span>
+              <input type="text" class="form-control w-100 mb-2" formControlName="personLastName">
+              <div *ngIf="clientForm.get('personLastName')?.dirty || clientForm.get('personLastName')?.touched">
+                <p *ngIf="clientForm.get('personLastName')?.hasError('required')" style="color: red">
+                  Este campo es requerido
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="input-fill w-100 mb-3">
+              <span class="mr-sm ">Email</span>
+              <input type="email" class="form-control w-100 mt-3" formControlName="personEmail">
+              <div *ngIf="clientForm.get('personEmail')?.dirty || clientForm.get('personEmail')?.touched">
+                <p *ngIf="clientForm.get('personEmail')?.hasError('required')" style="color: red">
+                  Este campo es requerido
+                </p>
+                <p *ngIf="clientForm.get('personEmail')?.hasError('email')" style="color: red">
+                  Este campo no pertenece a un Email
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="input-group">
+            <div class="input-fill w-100">
+              <span class="mr-sm">Telefono</span>
+              <input type="number" class="form-control w-100 mb-2" formControlName="personPhone">
+              <div *ngIf="clientForm.get('personPhone')?.dirty || clientForm.get('personPhone')?.touched">
+                <p *ngIf="clientForm.get('personPhone')?.hasError('required')" style="color: red">
+                  Este campo es requerido
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="input-group">
+            <span class="mr-sm">Direccion</span>
+            <div class="input-fill w-100 mt-3">
+              <textarea class="form-control w-100" formControlName="personAddress">
+              </textarea>
+              <div *ngIf="clientForm.get('personAddress')?.dirty || clientForm.get('personAddress')?.touched">
+                <p *ngIf="clientForm.get('personAddress')?.hasError('required')" style="color: red">
+                  Este campo es requerido
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="btns-edit">
+            <button class="btn btn-success w-100" type="submit">Editar</button>
+            <button class="btn btn-primary w-100 mt-3" [routerLink]="'/dashboard/'">Volver</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

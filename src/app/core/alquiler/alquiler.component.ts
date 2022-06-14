@@ -3,6 +3,7 @@ import {FormBuilder, FormControl, FormGroup, Validators} from "@angular/forms";
 import {ClientServiceService} from "../../services/client-service/client-service.service";
 import {GameService} from "../../services/game-service/game-service.service";
 import Swal from "sweetalert2";
+import {InvoiceService} from "../../services/invoice/invoice.service";
 
 @Component({
   selector: 'app-alquiler',
@@ -13,11 +14,13 @@ export class AlquilerComponent implements OnInit {
   alquilerForm:FormGroup = new FormGroup({});
   clients:any;
   games:any;
+  invoiceId:string='';
 
   constructor(
     private formBuilder: FormBuilder,
     public clientService:ClientServiceService,
-    public gameService:GameService
+    public gameService:GameService,
+    public invoiceService:InvoiceService
   ) { }
 
   ngOnInit(): void {
@@ -42,6 +45,13 @@ export class AlquilerComponent implements OnInit {
     if(this.alquilerForm.valid){
       this.getAllgames();
 
+      const data ={
+        personId:this.alquilerForm.get('personId')?.value
+      }
+      this.invoiceService.saveInvoice(data).subscribe((data)=>{
+        this.invoiceId = data.invoiceId
+      })
+
     }else{
       Swal.fire({
         icon: 'warning',
@@ -52,7 +62,4 @@ export class AlquilerComponent implements OnInit {
 
   }
 
-  buttonAlquilerGame(item:any) {
-
-  }
 }
